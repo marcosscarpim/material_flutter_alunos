@@ -5,7 +5,7 @@ import 'package:pokedex/viewmodel/poke_view_model.dart';
 import 'package:provider/provider.dart';
 
 const String URL_IMAGE =
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/";
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 const String EXTENSION = ".png";
 
 void main() {
@@ -77,13 +77,6 @@ class PokemonItem extends StatefulWidget {
 class _PokemonItemState extends State<PokemonItem> {
   @override
   Widget build(BuildContext context) {
-    // return Card(
-    //   elevation: 2.0,
-    //   child: Column(children: [
-    //     Image.network("$URL_IMAGE${widget.index + 1}$EXTENSION"),
-    //     Text(widget.pokemon.name),
-    //   ]),
-    // );
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
@@ -96,6 +89,7 @@ class _PokemonItemState extends State<PokemonItem> {
             borderRadius: const BorderRadius.all(Radius.elliptical(16, 16))),
         height: 100,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CachedNetworkImage(
               placeholder: (context, url) =>
@@ -105,16 +99,18 @@ class _PokemonItemState extends State<PokemonItem> {
               height: 100,
             ),
             Expanded(
-                child: Padding(
-                    padding: const EdgeInsets.only(top: 8, left: 10),
-                    child: Text(
-                      widget.pokemon.name,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )))
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8, left: 10),
+                child: Text(
+                  widget.pokemon.name,
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
