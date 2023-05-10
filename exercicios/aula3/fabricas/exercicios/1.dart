@@ -1,6 +1,7 @@
 /*
 Essa classe não compila.
 Por que?
+https://dart.dev/language/constructors#factory-constructors
 */
 
 class MyClass {

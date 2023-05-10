@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:navigation/forward_and_back.dart';
+import 'package:navigation/receive_data/forward_and_back.dart';
 import 'package:navigation/hero_navigation.dart';
 import 'package:navigation/go_router.dart';
+import 'package:navigation/send_data/route_settings.dart';
 import 'advanced/my_advanced_app.dart';
 
 void main() {
@@ -14,14 +15,14 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // usado para o Exemplo 3 do GoRouter!
-    /*return MaterialApp.router(
-      routerConfig: goRouter,
-    );*/
-    return const MaterialApp(
+    // usado para o Exemplo do GoRouter!
+    // return MaterialApp.router(
+    //   routerConfig: goRouter,
+    // );
+    return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: MainScreen(),
+          child: FirstRoute(),
         ),
       ),
     );

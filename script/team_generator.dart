@@ -45,8 +45,8 @@ void writeToFile(String fileString) async {
   File(FILE_OUTPUT_NAME).writeAsString(fileString);
 }
 
-/// Get a file with student list split by line and split them into groups based
-/// on [TEAM_SIZE] constant from beginning of this file.
+/// Get a file with student list splitted by line and split them into groups
+/// based on [TEAM_SIZE] constant from beginning of this file.
 void main() async {
   var fileContent = await readFileAsync();
   List<String> students = convertFileToList(fileContent);
