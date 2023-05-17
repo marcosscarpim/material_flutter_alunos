@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class FirstRoute extends StatefulWidget {
-  String? result;
-
-  FirstRoute({super.key});
+  const FirstRoute({super.key});
 
   @override
   State<FirstRoute> createState() => _FirstRouteState();
 }
 
 class _FirstRouteState extends State<FirstRoute> {
+  String? result;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +26,9 @@ class _FirstRouteState extends State<FirstRoute> {
                 _navigateAndDisplaySelection(context);
               },
             ),
-            if (widget.result != null) ...[
+            if (result != null) ...[
               const SizedBox(height: 10),
-              Text("${widget.result} pressed!"),
+              Text("$result pressed!"),
             ]
           ],
         ),
@@ -37,7 +37,7 @@ class _FirstRouteState extends State<FirstRoute> {
   }
 
   Future<void> _navigateAndDisplaySelection(BuildContext context) async {
-    widget.result = await Navigator.push(
+    result = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const SecondRoute()),
     );
