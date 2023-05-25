@@ -38,22 +38,20 @@ class PokemonList extends StatefulWidget {
 }
 
 class _PokemonListState extends State<PokemonList> {
-  late PokeViewModel pokeViewModel;
-
   @override
   void initState() {
     super.initState();
-    pokeViewModel = Provider.of<PokeViewModel>(context, listen: false);
+    final pokeViewModel = Provider.of<PokeViewModel>(context, listen: false);
     pokeViewModel.getPokemonData();
   }
 
   @override
   Widget build(BuildContext context) {
     return Consumer<PokeViewModel>(
-      builder: (context, model, child) => ListView(
-        children: List.generate(pokeViewModel.pokemonList.length, (index) {
+      builder: (context, viewModel, child) => ListView(
+        children: List.generate(viewModel.pokemonList.length, (index) {
           return PokemonItem(
-              pokemon: pokeViewModel.pokemonList[index], index: index);
+              pokemon: viewModel.pokemonList[index], index: index);
         }),
       ),
     );
